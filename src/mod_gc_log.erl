@@ -44,7 +44,7 @@
 
 -include("jlib.hrl").
 
--include("mod_gc_room.hrl").
+-include("mod_muc_room.hrl").
 
 %% Copied from mod_gc/mod_gc.erl
 -record(muc_online_room, {name_host = {<<>>, <<>>} :: {binary(), binary()},
