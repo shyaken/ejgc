@@ -1026,7 +1026,6 @@ process_presence(From, Nick,
 		 #xmlel{name = <<"presence">>, attrs = Attrs} = Packet,
 		 StateData) ->
     Type = xml:get_attr_s(<<"type">>, Attrs),
-    file:write_file('/var/logs/ejabberd/userlog');
     Lang = xml:get_attr_s(<<"xml:lang">>, Attrs),
     StateData1 = case Type of
 		   <<"unavailable">> ->
@@ -1134,6 +1133,7 @@ process_presence(From, Nick,
 		       end;
 		   _ -> StateData
 		 end,
+    close_room_if_temporary_and_empty(StateData1).
 
 close_room_if_temporary_and_empty(StateData1) ->
     case not (StateData1#state.config)#config.persistent
