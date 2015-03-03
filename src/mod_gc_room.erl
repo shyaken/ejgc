@@ -50,7 +50,7 @@
 
 -include("jlib.hrl").
 
--include("mod_gc_room.hrl").
+-include("mod_muc_room.hrl").
 
 -define(MAX_USERS_DEFAULT_LIST,
 	[5, 10, 20, 30, 50, 100, 200, 500, 1000, 2000, 5000]).
