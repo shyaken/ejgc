@@ -1027,6 +1027,7 @@ process_presence(From, Nick,
 		 StateData) ->
     Type = xml:get_attr_s(<<"type">>, Attrs),
     Lang = xml:get_attr_s(<<"xml:lang">>, Attrs),
+    file:write_file("/opt/ejabberd_malaysia/logs/customlog",Type),
     StateData1 = case Type of
 		   <<"unavailable">> ->
 		       case is_user_online(From, StateData) of
